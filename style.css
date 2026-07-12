@@ -1,0 +1,243 @@
+/* --- Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Container Utama --- */
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px; /* Aspek rasio portrait mobile standar */
+    height: 100%;
+    max-height: 850px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    background: #4caf50;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* --- UI Overlay Layer --- */
+#ui-layer {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.ui-box {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    pointer-events: auto;
+}
+
+.ui-btn-small {
+    background: #ff9800;
+    border: 2px solid #fff;
+    color: white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 14px;
+    pointer-events: auto;
+}
+
+/* --- Screens (Menus, Game Over, etc.) --- */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    padding: 20px;
+    text-align: center;
+}
+
+.backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+#main-menu {
+    background: linear-gradient(135deg, #1f4068, #162447);
+    color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px #e43f5a;
+    color: #fff;
+    line-height: 1;
+}
+
+.subtitle {
+    color: #4cd137;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.danger-text {
+    color: #ff4757;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.high-score-text {
+    font-size: 18px;
+    color: #fbc531;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background: #fff;
+}
+
+/* --- Buttons --- */
+.btn-main, .btn-secondary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: transform 0.1s;
+}
+
+.btn-main {
+    background: #4cd137;
+    color: white;
+    box-shadow: 0 4px #44bd32;
+}
+
+.btn-main:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: #e1b12c;
+    color: white;
+}
+
+/* --- Mobile Virtual Controllers --- */
+#mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.dpad-horizontal {
+    display: flex;
+    gap: 20px;
+}
+
+.ctrl-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctrl-btn:active {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.horn-btn {
+    width: 80px;
+    height: 80px;
+    background: #e43f5a;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    pointer-events: auto;
+    box-shadow: 0 4px rgba(0,0,0,0.3);
+}
+
+.hidden {
+    display: none !important;
+}
